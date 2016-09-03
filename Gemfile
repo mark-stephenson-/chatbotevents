@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use Postgres DB
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -22,26 +21,45 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+# use haml templating
+gem 'haml-rails'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# use Puma web server
+gem 'puma'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# authentication gems
+gem 'devise'
+gem 'omniauth-facebook'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Load environment variables
+  gem 'dotenv-rails'
+  # Call "byebug" anywhere in the code
   gem 'byebug'
+  # Use rspec for testing
+  gem 'rspec-rails', '~> 3.4'
 end
 
 group :development do
+  # Follow style guides
+  gem 'rubocop'
+  gem 'haml-lint'
+  gem 'scss_lint', require: false
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Enable meta capture for Rails Panel
+  gem 'meta_request'
+  # Keeping your application running in the background.
   gem 'spring'
+
+  # tidy up console output
+  gem 'awesome_print', require: 'ap'
+
+  # better error output
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
