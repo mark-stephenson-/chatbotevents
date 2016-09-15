@@ -1,0 +1,48 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @event.title
+%p
+  %b Category:
+  = @event.category_id
+%p
+  %b Start date:
+  = @event.start_date
+%p
+  %b End date:
+  = @event.end_date
+%p
+  %b Teaser:
+  = @event.teaser
+%p
+  %b Description:
+  = @event.description
+%p
+  %b Cover img:
+  = @event.cover_img
+%p
+  %b Street no:
+  = @event.street_no
+%p
+  %b Street name:
+  = @event.street_name
+%p
+  %b Floor:
+  = @event.floor
+%p
+  %b Town:
+  = @event.town
+%p
+  %b Region:
+  = @event.region
+%p
+  %b Postcode:
+  = @event.postcode
+%p
+  %b Country:
+  = @event.country
+
+= link_to 'Edit', edit_event_path(@event)
+\|
+= link_to 'Back', events_path

@@ -1,0 +1,52 @@
+= form_for @event, html:{multipart: true} do |f|
+  - if @event.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
+      %ul
+        - @event.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :category_id
+    = f.number_field :category_id
+  .field
+    = f.label :start_date
+    = f.datetime_select :start_date
+  .field
+    = f.label :end_date
+    = f.datetime_select :end_date
+  .field
+    = f.label :teaser
+    = f.text_field :teaser
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :cover_img
+    = f.file_field :cover_img
+  .field
+    = f.label :street_no
+    = f.text_field :street_no
+  .field
+    = f.label :street_name
+    = f.text_field :street_name
+  .field
+    = f.label :floor
+    = f.text_field :floor
+  .field
+    = f.label :town
+    = f.text_field :town
+  .field
+    = f.label :region
+    = f.text_field :region
+  .field
+    = f.label :postcode
+    = f.text_field :postcode
+  .field
+    = f.label :country
+    = f.text_field :country
+  .actions
+    = f.submit 'Save'

@@ -31,6 +31,10 @@ gem 'puma'
 gem 'devise'
 gem 'omniauth-facebook'
 
+# Image Upload and management
+gem 'carrierwave'
+gem 'rmagick'
+
 group :development, :test do
   # Load environment variables
   gem 'dotenv-rails'
