@@ -38,6 +38,8 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.3)
     ast (2.3.0)
+    autoprefixer-rails (6.4.1.1)
+      execjs
     awesome_print (1.7.0)
     bcrypt (3.1.11)
     better_errors (2.1.1)
@@ -46,6 +48,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap (4.0.0.alpha4)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
     builder (3.2.2)
     byebug (9.0.5)
     callsite (0.0.11)
@@ -272,6 +277,7 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
+  bootstrap (~> 4.0.0.alpha4)
   byebug
   carrierwave
   coffee-rails (~> 4.1.0)
