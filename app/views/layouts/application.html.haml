@@ -7,4 +7,21 @@
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
 %body
-  = yield
+  %nav.navbar.navbar-light.bg-faded
+    %button.navbar-toggler.hidden-sm-up{type:"button", data:{toggle:"collapse", target:"#nav"}, aria:{controls:"nav", expanded:"false", label:"Toggle Navigation"}}
+      &#9776;
+    .collapse.navbar-toggleable-xs{id:"nav"}
+      %a.navbar-brand{href:"#"}
+        CHATBOT.EVENTS
+      %a.nav-item.nav-link.active{href:"#"}
+        Home
+        %span.sr-only
+          (current)
+      %a.nav-item.nav-link{href:"#"}
+        Features
+      %a.nav-item.nav-link{href:"#"}
+        Pricing
+      %a.nav-item.nav-link{href:"#"}
+        About
+  .container
+    = yield
