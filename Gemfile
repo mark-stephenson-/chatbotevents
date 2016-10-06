@@ -36,6 +36,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 
 # Image Upload and management
+gem 'fog'
 gem 'carrierwave'
 gem 'rmagick'
 
