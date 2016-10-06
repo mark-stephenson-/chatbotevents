@@ -16,3 +16,4 @@
 !/log/.keep
 /tmp
 /public/uploads/event/cover_img
+.env
