@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap', '~> 4.0.0.alpha4'
 # use haml templating
 gem 'haml-rails'
+# include font awesome
+gem 'font-awesome-sass', '~> 4.6.2'
 
 # use Puma web server
 gem 'puma'

@@ -1,47 +1,21 @@
-%h1 Listing events
+%h2 Upcoming Events
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Category
-      %th Start date
-      %th End date
-      %th Teaser
-      %th Description
-      %th Cover img
-      %th Street no
-      %th Street name
-      %th Floor
-      %th Town
-      %th Region
-      %th Postcode
-      %th Country
-      %th
-      %th
-      %th
-
-  %tbody
-    - @events.each do |event|
-      %tr
-        %td= event.title
-        %td= event.category_id
-        %td= event.start_date
-        %td= event.end_date
-        %td= event.teaser
-        %td= event.description
-        %td= event.cover_img
-        %td= event.street_no
-        %td= event.street_name
-        %td= event.floor
-        %td= event.town
-        %td= event.region
-        %td= event.postcode
-        %td= event.country
-        %td= link_to 'Show', event
-        %td= link_to 'Edit', edit_event_path(event)
-        %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Event', new_event_path
+.row
+- @events.each do |event|
+  .col-xs-12.col-sm-6.col-md-6.col-lg-4
+    .listing{style:"height:380px;margin-bottom:50px; position:relative;background: #fff url(#{event.cover_img}) no-repeat center top;background-size: cover;"}
+      .info-block{style:"height:170px;position:absolute;bottom:0;left:0;width:100%;text-align: center;background:#fff;"}
+        .block1{style:"padding:15px;height:200px;"}
+          =link_to(event.title, event, {style:"font-size:20px;color:#8248a2;"})
+          %span.listing-title-location{style:"width:100%; display:block;"}
+            -if (event.region.length > 1)
+              %span
+                %i.fa.fa-map-marker
+                =event.region
+        .block2{style:"position:absolute;bottom:0; left: 0; width:100%;background:#efefef;height:60px;padding: 15px 20px;"}
+          .listing-date{style:"float:left;"}
+            %i.fa.fa-calendar
+            =event.start_date.strftime("%d/%m/%Y")
+          .listing-icons{style:"float:right;"}
+            %i.fa.fa-eye
+            100
