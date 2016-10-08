@@ -1,3 +1,44 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.listing {
+    height: 380px;
+    margin-bottom: 50px;
+    position: relative;
+}
+.info-block {
+    height: 170px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    .headerblock {
+        padding: 15px;
+        height: 200px;
+        a {
+            font-size: 20px;
+            color: #8248a2;
+        }
+    }
+    .footerblock {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #efefef;
+        height: 60px;
+        padding: 15px 20px;
+    }
+    .listing-title-location {
+        width: 100%;
+        display: block;
+    }
+    .listing-date {
+        float: left;
+    }
+    .listing-icons {
+        float: right;
+    }
+}
