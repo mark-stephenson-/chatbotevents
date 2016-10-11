@@ -1,48 +1,82 @@
-%p#notice= notice
-
-%p
-  %b Title:
-  = @event.title
-%p
-  %b Category:
-  = @event.category_id
-%p
-  %b Start date:
-  = @event.start_date
-%p
-  %b End date:
-  = @event.end_date
-%p
-  %b Teaser:
-  = @event.teaser
-%p
-  %b Description:
-  = @event.description
-%p
-  %b Cover img:
-  = @event.cover_img
-%p
-  %b Street no:
-  = @event.street_no
-%p
-  %b Street name:
-  = @event.street_name
-%p
-  %b Floor:
-  = @event.floor
-%p
-  %b Town:
-  = @event.town
-%p
-  %b Region:
-  = @event.region
-%p
-  %b Postcode:
-  = @event.postcode
-%p
-  %b Country:
-  = @event.country
-
-= link_to 'Edit', edit_event_path(@event)
-\|
-= link_to 'Back', events_path
+.event-show-container
+  .event-show-header{style:"background: #fff url(#{@event.cover_img});"}
+    .container.event-show-content
+      .row
+        .col-md-4.offset-md-4
+          .event-show-meta
+            .h1
+              = @event.title
+            %span.show-location{style:"width:100%;border-bottom: solid 1px rgba(255,255,255,0.2);float: left;"}
+              -if (@event.region.length > 1)
+                %span
+                  %i.fa.fa-map-marker
+                  =@event.region
+            .row
+              .col-xs-6
+                %span.meta-text
+                  Starts:
+                %span.meta-icon
+                  %i.fa.fa-calendar
+                %span.meta-text
+                  =@event.start_date.strftime("%d/%m/%Y")
+                %span.meta-icon
+                  %i.fa.fa-clock-o
+                %span.meta-text
+                  =@event.start_date.strftime("%H:%M")
+              .col-xs-6
+                %span.meta-text
+                  Ends:
+                %span.meta-icon
+                  %i.fa.fa-calendar
+                %span.meta-text
+                  =@event.end_date.strftime("%d/%m/%Y")
+                %span.meta-icon
+                  %i.fa.fa-clock-o
+                %span.meta-text
+                  =@event.end_date.strftime("%H:%M")
+  .container
+    .event-show-details
+      .detail-dash
+      .details-main
+        .row
+          .col-sm-12
+            .section-header
+              %h3
+                %span
+                  %i.fa.fa-info-circle
+                  Event Details
+            .section-detail
+              .row
+                .col-sm-6
+                  %p
+                    =@event.teaser
+                  %p
+                    =@event.description
+                .col-sm-6
+                  %span.address-block
+                    %i.fa.fa-map-marker
+                    %span.address-text
+                      %h5
+                        =@event.venue_name
+                      %address
+                        = "#{@event.street_no} #{@event.street_name}"
+                        %br
+                        -if (@event.floor.length > 0)
+                          = "Floor #{@event.floor}"
+                          %br
+                        -if (@event.town.length > 0)
+                          = @event.town
+                          %br
+                        -if (@event.region.length > 0)
+                          = @event.region
+                          %br
+                        -if (@event.postcode.length > 0)
+                          = @event.postcode
+                          %br
+                        -if (@event.country.length > 0)
+                          = @event.country
+                          %br
+    .row
+      .col.sm-12
+        .event-show-btm-nav
+          =link_to 'Back', events_path, class:"btn btn-primary"

@@ -1,6 +1,10 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$darkpurple: #452175;
+$lightpurple: #bc73c5;
+$linkpurple: #8248a2;
+$detailtext: #999999;
 .listing {
     height: 380px;
     margin-bottom: 50px;
@@ -19,7 +23,7 @@
         height: 200px;
         a {
             font-size: 20px;
-            color: #8248a2;
+            color: $linkpurple;
         }
     }
     .footerblock {
@@ -41,4 +45,78 @@
     .listing-icons {
         float: right;
     }
+}
+.event-show-container {
+    margin-top: -6px;
+}
+.event-show-header {
+    background-position: center top !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+.event-show-meta {
+    padding: 30px;
+    margin-top: 80px;
+    background: $linkpurple;
+    color: #fff;
+    text-align: center;
+    .meta-icon {
+        width: 100%;
+        display: block;
+    }
+    .meta-text {
+        padding-bottom: 10px;
+        display: block;
+    }
+    .show-location {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+}
+.event-show-details {
+  background-color: #fff;
+  margin-top: 30px;
+  .section-header {
+      border-bottom: 1px solid $lightpurple;
+      padding: 20px 30px;
+      i {
+          color: $darkpurple;
+      }
+      h3 {
+          font-size: 32px;
+          line-height: 48px;
+      }
+      .fa{
+        margin-right: 20px;
+      }
+  }
+  .section-detail {
+      padding: 30px;
+      margin-bottom: 30px;
+      color: $detailtext;
+  }
+  .address-block {
+      float: left;
+      width: 100%;
+      .fa {
+          width: 40px;
+          height: 30px;
+          float: left;
+      }
+      .address-text {
+          width: calc(100% - 40px);
+          float: left;
+      }
+  }
+}
+.event-show-btm-nav{
+  padding: 15px;
+  .btn{
+    background: $darkpurple;
+    border-color: $darkpurple;
+  }
+  .btn:hover{
+    background:$lightpurple;
+    border-color: $lightpurple;
+  }
 }

@@ -13,16 +13,14 @@
         = image_tag("logo_small.png", height: 50, class:"pull-left")
         %h1.pull-left.logo
           CHATBOT.EVENTS
-      .navbar-items.pull-right
+      -#.navbar-items.pull-right
         %button.navbar-toggler.hidden-sm-up{type:"button", data:{toggle:"collapse", target:"#nav"}, aria:{controls:"nav", expanded:"false", label:"Toggle Navigation"}}
           &#9776;
         .collapse.navbar-toggleable-xs{id:"nav"}
-
           %a.nav-item.nav-link.active{href:"#"}
             Home
             %span.sr-only
               (current)
           %a.nav-item.nav-link{href:"#"}
             Features
-  .container
-    = yield
+  = yield
