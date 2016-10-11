@@ -1,6 +1,7 @@
 # Handles logic for the events controller
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :password_check, only: [:edit, :update, :destroy, :new]
 
   # GET /events
   def index
@@ -65,12 +66,16 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def password_check
+    redirect_to action: :index unless params[:password] == 'trustno1'
+  end
+
   # Never trust parameters from the scary internet
   def event_params
     params.require(:event).permit(
       :title, :category_id, :start_date, :end_date,
       :teaser, :description, :cover_img, :street_no, :street_name, :floor,
-      :town, :region, :postcode, :country, :venue_name
+      :town, :region, :postcode, :country, :venue_name, :password
     )
   end
 end
