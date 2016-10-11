@@ -1,5 +1,15 @@
 .container
-  %h2 Upcoming Events
+  .row
+    .col-sm-12.event-index-news
+      .alert.alert-info
+        %h4 Add your event to the list.
+        %p
+          We'd love you list your event on this site, for free.
+          Drop an email to mark@m12n.co.uk with the details.
+
+  .row
+    .col-sm-12
+      %h2 Upcoming Events
 
   .row
   - @events.each do |event|
