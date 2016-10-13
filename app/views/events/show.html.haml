@@ -49,9 +49,9 @@
               .row
                 .col-sm-6
                   %p
-                    =@event.teaser
+                    =simple_format(@event.teaser)
                   %p
-                    =@event.description
+                    =simple_format(@event.description)
                 .col-sm-6
                   %span.address-block
                     %i.fa.fa-map-marker
