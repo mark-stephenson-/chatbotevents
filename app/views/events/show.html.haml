@@ -1,3 +1,9 @@
+- title(@event.title)
+- meta_tag("og:url", event_url(@event))
+- meta_tag("og:description", @event.teaser)
+- meta_tag("og:image", @event.cover_img)
+- meta_tag("og:title", @event.title)
+
 .event-show-container
   .event-show-header{style:"background: #fff url(#{@event.cover_img});"}
     .container.event-show-content

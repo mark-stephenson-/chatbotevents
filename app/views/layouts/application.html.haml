@@ -2,7 +2,13 @@
 %html
 %head
   %title
-    Chatbotevents
+    = if content_for?(:title) then yield(:title) + ' | ' end
+    Chatbot.Events
+  %meta{ :property => 'og:title', :content => "#{yield_meta_tag('og:title', 'Chatbot.Events')}" }
+  %meta{ :property => 'og:site_name', :content => "#{yield_meta_tag('og:site_name', 'Chatbot.Events')}" }
+  %meta{ :property => 'og:url', :content => "#{yield_meta_tag('og:url', 'http://www.chatbot.events')}" }
+  %meta{ :property => 'og:description', :content => "#{yield_meta_tag('og:description', 'Find events relating to Chatbots')}" }
+  %meta{ :property => 'og:image', :content => "#{yield_meta_tag('og:image', image_url('Logo-Layout.png'))}" }
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
